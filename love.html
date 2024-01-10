@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Amazing Girlfriend</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+            font-size: 16px;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcccb;
+            border-radius: 10px;
+        }
+        main {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+        }
+        .card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            display: none;
+        }
+        .card img {
+            max-width: 100%; /* Ensure the image doesn't exceed the container width */
+            height: auto; /* Maintain the aspect ratio of the image */
+        }
+        #imageContainer {
+            display: flex;
+            justify-content: space-between;
+        }
+        #questionContainer {
+            text-align: center;
+            margin-top: 20px;
+            transition: transform 0.5s ease; /* Add smooth transition effect */
+        }
+        .poem {
+            display: none;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffcccb;
+            margin-top: 20px;
+        }
+        .poem p::first-letter {
+            color: #333; /* Highlight color */
+            font-weight: bold; /* Make the first letter bold */
+            font-size: 1.2em; /* Adjust font size if needed */
+        }
+
+        @media only screen and (max-width: 600px) {
+            /* Styles for screens smaller than 600px */
+            body {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HEYYY MY LOVE !!!</h1>
+    </header>
+
+    <main>
+        <p>Dear [SIMU],</p>
+
+        <p>I just wanted to take a moment to tell you how much you mean to me. You are truly special and bring so much joy and happiness into my life.</p>
+
+        <p>Whether it's the way you smile, the warmth of your laughter, or the kindness in your heart, every little thing about you is perfect. I feel incredibly lucky to have you by my side.</p>
+
+        <p>Thank you for being my rock, my confidant, and my best friend. I cherish the moments we spend together and look forward to creating many more beautiful memories with you.</p>
+         
+        <p>In the dictionary of beauty, your name is written in the margins.</p>
+
+        <p>Every moment with you is a chapter written in the book of my happiest memories.</p>
+
+        <p>Tuk moi bht bhal pau,bht hurt krisu aru hebur dukh ketiau nidiu hodai morom korim</p>
+
+        <button onclick="showFavoritePictures()">See My Favorite Pictures of You</button>
+
+        <div id="imageContainer">
+            <div class="card" id="card1"><img src="20210113131735_IMG_3252.jpg" alt="Your Image 1"></div>
+        </div>
+
+        <div id="questionContainer">
+            <p>Will you be my partner, my girlfriend, for the rest of my life?</p>
+            <button onclick="handleResponse('yes')">Yes</button>
+            <button onclick="handleResponse('no')">No</button>
+        </div>
+
+        <div class="poem" id="poemContainer">
+            <p><span>H</span>armony in your laughter, a sweet serenade,</p>
+            <p><span>A</span>dorned with grace, in every cascade.</p>
+            <p><span>R</span>adiant as the morning sun, your smile,</p>
+            <p><span>S</span>parkling eyes, a charm that lasts a mile.</p>
+
+            <p><span>H</span>earts entwined, a dance of joy,</p>
+            <p><span>I</span>n your presence, love finds its alloy.</p>
+            <p><span>T</span>ime stands still in your gentle gaze,</p>
+            <p><span>A</span> symphony of love that forever stays.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created with love</p>
+    </footer>
+    <script>
+        function showFavoritePictures() {
+            var cards = document.getElementsByClassName('card');
+    
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].style.display = 'block';
+            }
+        }
+    
+        function handleResponse(response) {
+            var noButton = document.querySelector('#questionContainer button:last-child');
+            var currentTranslation = parseInt(getComputedStyle(noButton).transform.split(',')[4]) || 0;
+    
+            if (response === 'no') {
+                // If the response is 'no', move the 'No' button away
+                noButton.style.transform = 'translateX(' + (currentTranslation + 50) + 'px)';
+            } else if (response === 'yes') {
+                // Handle 'yes' response by showing the poem
+                var poemContainer = document.getElementById('poemContainer');
+                poemContainer.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
