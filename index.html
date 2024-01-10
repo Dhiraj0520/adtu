@@ -71,6 +71,37 @@
                 font-size: 14px;
             }
         }
+        
+        #musicSection {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #f4f4f4;
+        }
+
+        #musicButtonsContainer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .musicButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .musicButton:hover {
+            background-color: #45a049;
+        }
+        
+        
     </style>
 </head>
 <body>
@@ -116,10 +147,35 @@
             <p><span>T</span>ime stands still in your gentle gaze,</p>
             <p><span>A</span> symphony of love that forever stays.</p>
         </div>
+        <button onclick="revealGift()">Here's a Gift for You</button>
+        <div id="giftContainer" style="display: none; text-align: center; margin-top: 20px;">
+            <img src="IMG_20240110_140431.jpg" alt="Surprise Gift" style="max-width: 300px; width: 100%;">
+            <p>for you. 🎁</p>
+        </div>
+        <button onclick="changeBackgroundColor()">Click to see in which colour u will look best</button>
+
+        <div id="musicSection">
+            <h2>Click korrr ata atakoi</h2>
+            <div id="musicButtonsContainer">
+                <a href="https://www.instagram.com/reel/C1drVyCPiEB/?igsh=MW9teHZ5Zzl3d3M5Zg==" class="musicButton" target="_blank">TUR LOI</a>
+                <a href="https://youtube.com/shorts/F5JjAxoJjkA?si=cgZkLXh2DjTmPk8a" class="musicButton" target="_blank">PROMISE</a>
+                <a href="https://youtu.be/K8prKuJFKhQ?si=P3SqzCMwMLojQry9" class="musicButton" target="_blank">TUK MISS KRILE HUNU</a>
+
+                <!-- Add more buttons as needed -->
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>Created with love</p>
+        <p><div id="memoryLaneContainer">
+            <div class="memoryDate">28 Jan 2020</div>
+            <div class="memoryDate">12 Aug 2020</div>
+            <div class="memoryDate">20 Oct 2020</div>
+            <div class="memoryDate">25 Dec 2020</div>
+            <div class="memoryDate">5 Feb 2021</div>
+            <div class="memoryDate">16 Feb 2021</div>
+            <div class="memoryDate">3 Dec 2022</div>
+        </div>my fav dates</p>
     </footer>
     <script>
         function showFavoritePictures() {
@@ -142,6 +198,28 @@
                 var poemContainer = document.getElementById('poemContainer');
                 poemContainer.style.display = 'block';
             }
+        }
+
+        function revealGift() {
+            // Show the hidden gift container
+            var giftContainer = document.getElementById('giftContainer');
+            giftContainer.style.display = 'block';
+    
+            // Optionally, you can add more animations or effects here
+        }
+        function changeBackgroundColor() {
+            var body = document.body;
+            var randomColor = getRandomColor();
+            body.style.backgroundColor = randomColor;
+        }
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
         }
     </script>
 </body>
