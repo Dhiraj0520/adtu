@@ -110,16 +110,16 @@
   <div class="paper">
     <p class="p1">Drag the papers to move!</p>
   </div>
-  <script>
+ <!-- ... your existing HTML ... -->
+
+<script>
     // Contents of script.js
     class Paper {
       holdingPaper = false;
       touchX = 0;
       touchY = 0;
-      mouseX = 0;
-      mouseY = 0;
-      prevMouseX = 0;
-      prevMouseY = 0;
+      prevTouchX = 0;
+      prevTouchY = 0;
       velX = 0;
       velY = 0;
       rotation = Math.random() * 30 - 15;
@@ -128,6 +128,61 @@
       rotating = false;
   
       init(paper) {
+        const handleTouchMove = (e) => {
+          if (this.holdingPaper) {
+            const touch = e.touches[0];
+            this.touchX = touch.clientX;
+            this.touchY = touch.clientY;
+  
+            this.velX = this.touchX - this.prevTouchX;
+            this.velY = this.touchY - this.prevTouchY;
+  
+            if (!this.rotating) {
+              this.currentPaperX += this.velX;
+              this.currentPaperY += this.velY;
+            }
+  
+            this.prevTouchX = this.touchX;
+            this.prevTouchY = this.touchY;
+  
+            paper.style.transform = `translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg)`;
+          }
+        };
+  
+        document.addEventListener('touchstart', (e) => {
+          if (this.holdingPaper) return;
+          this.holdingPaper = true;
+  
+          paper.style.zIndex = highestZ;
+          highestZ += 1;
+  
+          const touch = e.touches[0];
+          this.touchX = touch.clientX;
+          this.touchY = touch.clientY;
+          this.prevTouchX = this.touchX;
+          this.prevTouchY = this.touchY;
+        });
+  
+        document.addEventListener('touchmove', handleTouchMove);
+  
+        window.addEventListener('touchend', () => {
+          this.holdingPaper = false;
+          this.rotating = false;
+        });
+  
+        paper.addEventListener('mousedown', (e) => {
+          if (this.holdingPaper) return;
+          this.holdingPaper = true;
+  
+          paper.style.zIndex = highestZ;
+          highestZ += 1;
+  
+          this.mouseX = e.clientX;
+          this.mouseY = e.clientY;
+          this.prevMouseX = this.mouseX;
+          this.prevMouseY = this.mouseY;
+        });
+  
         document.addEventListener('mousemove', (e) => {
           if (!this.rotating) {
             this.mouseX = e.clientX;
@@ -137,8 +192,8 @@
             this.velY = this.mouseY - this.prevMouseY;
           }
   
-          const dirX = e.clientX - this.touchX;
-          const dirY = e.clientY - this.touchY;
+          const dirX = e.clientX - this.mouseX;
+          const dirY = e.clientY - this.mouseY;
           const dirLength = Math.sqrt(dirX * dirY + dirY * dirY);
           const dirNormalizedX = dirX / dirLength;
           const dirNormalizedY = dirY / dirLength;
@@ -162,33 +217,7 @@
           }
         });
   
-        paper.addEventListener('touchstart', (e) => {
-          if (this.holdingPaper) return;
-          this.holdingPaper = true;
-  
-          paper.style.zIndex = highestZ;
-          highestZ += 1;
-  
-          this.touchX = e.touches[0].clientX;
-          this.touchY = e.touches[0].clientY;
-          this.prevMouseX = this.touchX;
-          this.prevMouseY = this.touchY;
-        });
-  
-        paper.addEventListener('touchmove', (e) => {
-          if (this.holdingPaper) {
-            if (!this.rotating) {
-              this.currentPaperX += e.touches[0].clientX - this.prevMouseX;
-              this.currentPaperY += e.touches[0].clientY - this.prevMouseY;
-            }
-            this.prevMouseX = e.touches[0].clientX;
-            this.prevMouseY = e.touches[0].clientY;
-  
-            paper.style.transform = `translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg)`;
-          }
-        });
-  
-        window.addEventListener('touchend', () => {
+        window.addEventListener('mouseup', () => {
           this.holdingPaper = false;
           this.rotating = false;
         });
@@ -204,6 +233,11 @@
       p.init(paper);
     });
   </script>
+  
+  <!-- Include mobile.js -->
+  
+  <!-- ... rest of your HTML ... -->
+  
 
 </body>
 
