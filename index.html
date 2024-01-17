@@ -62,6 +62,8 @@
             document.getElementById("userName").innerText = userName;
         } else {
             alert("I love only Harshita");
+            // Always display the name prompt for subsequent attempts
+            document.getElementById("namePrompt").style.display = "block";
         }
     }
 
@@ -79,7 +81,7 @@
 </script>
 
 <div id="namePrompt">
-    <p>Enter a girl name:</p>
+    <p>Enter your name:</p>
     <input type="text" id="nameInput">
     <br>
     <button onclick="checkName()">Submit</button>
