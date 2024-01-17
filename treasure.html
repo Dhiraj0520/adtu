@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f0f0; /* Light Gray color */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #treasureContent {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4CAF50; /* Green color */
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker shade on hover */
+        }
+
+        #treasureImage {
+            display: none;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="treasureContent">
+    <h1>The Enchanted Treasure Hunt</h1>
+    <p>bohut kosto kori pray kori kori ai treasure to paisu, ai tresure to bht special hoi jano, bhalke khulibi </p>
+
+    <button onclick="revealTreasure()">Reveal the Treasure</button>
+
+    <!-- Hidden image initially -->
+    <img id="treasureImage" src="PicsArt_01-02-07.39.04.jpg" alt="Harshita's Photo">
+
+    <p id="loveNote" style="display: none;">Hey beautiful,
+
+        My heart aches knowing I hurt you earlier. My words were careless, and seeing you compare me to anyone breaks my soul. Periods suck, they make you grumpy and sometimes we say things we don't mean. Remember, it's never you, sweetheart, it's the hormones talking.
+        
+        Look, I know I'm not perfect, but with every breath, I love you more. His name you whispered? Just a faded echo compared to the fire we have. Trust me, my love for you burns brighter than a thousand suns. His promises were whispers in the wind, mine are built on bricks and kisses.
+        
+        Forget him, darling. He's a chapter closed, a melody half-forgotten. My hands are yours, holding you, cherishing you, forever. Let the tears fall, not for him, but for the future we'll paint together, a masterpiece of love and laughter.
+        
+        No need for grand gestures, just this quiet note to whisper a truth: no one loves you like I do. So hold me close, my love, and feel the rhythm of our hearts, beating in perfect unison. You are mine, completely, beautifully, eternally.
+        
+        More than him, more than anyone, more than words can say, I love you.
+        
+        Yours, and only yours,
+        
+        (petla)
+        </p>
+</div>
+
+<script>
+    function revealTreasure() {
+        // Display the hidden image and love note
+        document.getElementById("treasureImage").style.display = "block";
+        document.getElementById("loveNote").style.display = "block";
+
+        // You can add more personalized messages or actions here
+    }
+</script>
+
+</body>
+</html>

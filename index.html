@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Space</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden; /* Ensure hearts stay within the viewport */
+        }
+
+        #treasureHunt,
+        #starryNight,
+        #puzzleOption {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #d9534f; /* Bootstrap's danger color */
+        }
+
+        button {
+            background-color: #d9534f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #c9302c; /* Darker shade on hover */
+        }
+
+        /* Animation for floating hearts */
+        .heart {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #d9534f;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-30px);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function openTreasureHunt() {
+        window.open("treasure.html", "_self");
+    }
+
+    function openStarryNight() {
+        window.open("starry.html", "_self");
+    }
+
+    function openPuzzleOption() {
+        window.open("puzzle.html", "_self");
+    }
+</script>
+
+<div id="treasureHunt">
+    <h1>Option 1: Treasure Hunt</h1>
+    <p>Embark on a magical journey filled with surprises and hidden treasures.</p>
+    <button onclick="openTreasureHunt()">Start Treasure Hunt</button>
+    <!-- Add any additional content specific to the Treasure Hunt option -->
+</div>
+
+<div id="starryNight">
+    <h1>Option 2: Starry Night</h1>
+    <p>Experience a romantic night under the stars with special moments awaiting you.</p>
+    <button onclick="openStarryNight()">Start Starry Night</button>
+    <!-- Add any additional content specific to the Starry Night option -->
+</div>
+
+<div id="puzzleOption">
+    <h1>Option 3: beya napabi</h1>
+    <p>soryyyyyyyyy.</p>
+    <button onclick="openPuzzleOption()">Start Puzzle</button>
+    <!-- Add any additional content specific to the Puzzle option -->
+</div>
+
+</body>
+</html>
