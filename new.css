@@ -17,63 +17,63 @@ body {
 }
 
 .first-text {
-  font-size: 5vw; /* Adjust as needed */
+  font-size: 3.5vw; /* Adjust as needed */
   position: absolute;
   left: 2.5%;
   top: 10%;
   opacity: 0;
   animation-name: topFadeOut;
-  animation-duration: 5s;
+  animation-duration: 10s; /* Increase duration */
   color: white;
 }
 
 .second-text {
-  font-size: 4vw; /* Adjust as needed */
+  font-size: 2.5vw; /* Adjust as needed */
   position: absolute;
   top: 17%;
   opacity: 0;
   animation-name: rightFadeInOut;
-  animation-delay: 3s;
-  animation-duration: 6s;
+  animation-delay: 6s; /* Adjust delay */
+  animation-duration: 10s; /* Increase duration */
   color: #ccc;
 }
 
 .third-text {
   transform: rotate(-90deg);
-  font-size: 2.5vw; /* Adjust as needed */
+  font-size: 1.5vw; /* Adjust as needed */
   position: absolute;
   left: 45%;
   top: 45%;
   opacity: 0;
   animation-name: topFadeOutVertical;
-  animation-delay: 7.5s;
-  animation-duration: 6s;
+  animation-delay: 12s; /* Adjust delay */
+  animation-duration: 10s; /* Increase duration */
   color: #a3ddf0;
   white-space: nowrap;
 }
 
 .fourth-text {
-  font-size: 4vw; /* Adjust as needed */
+  font-size: 2.5vw; /* Adjust as needed */
   position: absolute;
   top: 21%;
   left: 10%;
   opacity: 0;
   color: #f0a3be;
   animation-name: fadeInOut;
-  animation-delay: 8.5s;
-  animation-duration: 9s;
+  animation-delay: 14s; /* Adjust delay */
+  animation-duration: 10s; /* Increase duration */
 }
 
 .fifth-text {
-  font-size: 6vw; /* Adjust as needed */
+  font-size: 4vw; /* Adjust as needed */
   position: absolute;
   left: 5%;
   bottom: 25%;
   opacity: 0;
   color: #f0eba3;
   animation-name: bottomFadeOut;
-  animation-delay: 10s;
-  animation-duration: 9s;
+  animation-delay: 16s; /* Adjust delay */
+  animation-duration: 10s; /* Increase duration */
 }
 
 @keyframes topFadeOut {
@@ -83,7 +83,7 @@ body {
     opacity: 0;
   }
 
-  75% {
+  50% {
     position: absolute;
     top: 25%;
     opacity: 1;
@@ -101,7 +101,7 @@ body {
     opacity: 0;
   }
 
-  75% {
+  50% {
     position: absolute;
     bottom: 25%;
     opacity: 1;
@@ -119,7 +119,7 @@ body {
     opacity: 0;
   }
 
-  75% {
+  50% {
     position: absolute;
     top: 45%;
     opacity: 1;
@@ -137,7 +137,7 @@ body {
     opacity: 0;
   }
 
-  75% {
+  50% {
     position: absolute;
     right: 10rem;
     opacity: 1;
@@ -154,7 +154,7 @@ body {
     opacity: 0;
   }
 
-  45% {
+  50% {
     opacity: 1;
   }
 
