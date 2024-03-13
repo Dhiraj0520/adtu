@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('1624092765519.jpg'); /* Add the correct path or URL for your background image */
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .compliment-section {
+            margin-bottom: 20px;
+        }
+
+        .message-section, .voice-note-section {
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .bottom-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>please beya pai nathakibi gediiii</h1>
+        </header>
+        <section class="compliment-section">
+            <h2>mon beya hole etu sabi hodai blg blg ahibooo:</h2>
+            <p id="quote"></p>
+        </section>
+        <section class="message-section">
+            <h2>My Special Message:</h2>
+            <p>Just wanted to remind you how special you are to me. toi best beh, and toi je ko toi red flag buli then huni lo aji pra mur fav colour redddddddddd.</p>
+        </section>
+        <section class="voice-note-section">
+            <h2>monor pra koisu:</h2>
+            <audio controls>
+                <source src="lovevoive.mpeg" type="audio/mp3"> <!-- Add the URL or path to your pre-recorded voice note -->
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+        <button class="bottom-button" onclick="redirectToOtherPage()">Toi kimn dhunia jano? emannn</button>
+    </div>
+
+    <script>
+        // Fetch a random quote from the API
+        function fetchQuote() {
+            fetch('https://api.quotable.io/random')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('quote').textContent = `"${data.content}" - ${data.author}`;
+                })
+                .catch(error => console.error('Error fetching quote:', error));
+        }
+
+        // Redirect to another page
+        function redirectToOtherPage() {
+            window.location.href = 'otherpage.html'; // Change 'otherpage.html' to the URL of your other page
+        }
+
+        // Fetch initial quote when the page loads
+        window.onload = fetchQuote;
+    </script>
+</body>
+</html>
